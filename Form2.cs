@@ -21,5 +21,10 @@ namespace Group_11___COSC_31112
         {
 
         }
+
+        private void incomelbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
