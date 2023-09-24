@@ -55,10 +55,12 @@ namespace Group_11___COSC_31112
                 MessageBox.Show("CSV file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public int flag;
         private void Logbtn_Click(object sender, EventArgs e)
         {
             string enteredUsername = usernameTxt.Text;
             string enteredPassword = passwordTxt.Text;
+            
 
             // Check if the entered username exists in the userCredentials dictionary
             if (userCredentials.ContainsKey(enteredUsername))
@@ -67,8 +69,12 @@ namespace Group_11___COSC_31112
                 if (userCredentials[enteredUsername] == enteredPassword)
                 {
                     // Successful login
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    flag = 1;
+                    Home form2 = new Home();
+                    form2.Show();
                 }
+
                 else
                 {
                     // Password is incorrect
@@ -134,5 +140,6 @@ namespace Group_11___COSC_31112
                 }
             }
         }
+
     }
 }
