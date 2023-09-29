@@ -10,26 +10,16 @@ using System.Windows.Forms;
 
 namespace Group_11___COSC_31112
 {
-    public partial class Home : Form
+    public partial class addNewAcc : Form
     {
-        public Home()
+        public addNewAcc()
         {
             InitializeComponent();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void newAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void incomelbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editAccontsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
+            
         }
     }
 }

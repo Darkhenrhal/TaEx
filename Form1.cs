@@ -60,16 +60,16 @@ namespace Group_11___COSC_31112
         {
             string enteredUsername = usernameTxt.Text;
             string enteredPassword = passwordTxt.Text;
-            
+
 
             // Check if the entered username exists in the userCredentials dictionary
-            if (userCredentials.ContainsKey(enteredUsername))
+            if (userCredentials.ContainsKey(enteredUsername) != null)
             {
                 // Username exists, now check the password
                 if (userCredentials[enteredUsername] == enteredPassword)
                 {
                     // Successful login
-                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     flag = 1;
                     Home form2 = new Home();
                     form2.Show();
