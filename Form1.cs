@@ -25,7 +25,7 @@ namespace Group_11___COSC_31112
 
         private void Log_Load(object sender, EventArgs e)
         {
-            string csvFilePath = @"\Group 11 - COSC 31112\Resources\Login_Details.csv";
+            string csvFilePath = @"Resources\Login_Details.csv";
 
             // Check if the CSV file exists
             if (File.Exists(csvFilePath))
@@ -60,85 +60,111 @@ namespace Group_11___COSC_31112
         {
             string enteredUsername = usernameTxt.Text;
             string enteredPassword = passwordTxt.Text;
-
-
-            // Check if the entered username exists in the userCredentials dictionary
-            if (userCredentials.ContainsKey(enteredUsername) != null)
+            try
             {
-                // Username exists, now check the password
-                if (userCredentials[enteredUsername] == enteredPassword)
+                // Check if the entered username exists in the userCredentials dictionary
+                if (userCredentials.ContainsKey(enteredUsername) != null)
                 {
-                    // Successful login
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    flag = 1;
-                    Home form2 = new Home();
-                    form2.Show();
-                }
+                    // Username exists, now check the password
+                    if (userCredentials[enteredUsername] == enteredPassword)
+                    {
+                        // Successful login
+                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        flag = 1;
+                        
+                        Home form2 = new Home();
+                        form2.Show();
+                        usernameTxt.Clear();
+                        passwordTxt.Clear();
+                    }
 
+                    else
+                    {
+                        // Password is incorrect
+                        MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        // Clear the password textbox
+                        passwordTxt.Clear();
+                    }
+                }
                 else
                 {
-                    // Password is incorrect
-                    MessageBox.Show("Password is incorrect.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    // Clear the password textbox
+                    // Both username and password are incorrect
+                    MessageBox.Show("Incorrect Login Credentials.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Clear both username and password textboxes
+                    usernameTxt.Clear();
                     passwordTxt.Clear();
                 }
+                this.Hide();
             }
-            else
+            catch(Exception ex)
             {
-                // Both username and password are incorrect
-                MessageBox.Show("Incorrect Login Credentials.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Clear both username and password textboxes
+          
+                    MessageBox.Show("Incorrect Login Credentials.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 usernameTxt.Clear();
                 passwordTxt.Clear();
             }
+
+            
         }
 
         private void Signbtn_Click(object sender, EventArgs e)
         {
             string enteredUsername = usernameTxt.Text;
             string enteredPassword = passwordTxt.Text;
-
-            // Check if the entered username exists in the userCredentials dictionary
-            if (userCredentials.ContainsKey(enteredUsername))
+            try
             {
-                // Username exists, show a message about existing account
-                MessageBox.Show($"Username '{enteredUsername}' is already registered. Enter the correct password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Clear the password textbox
-                passwordTxt.Clear();
-            }
-            else
-            {
-                if (AcceptBx.Checked)
+                // Check if the entered username exists in the userCredentials dictionary
+                if (userCredentials.ContainsKey(enteredUsername))
                 {
-                    // Username doesn't exist, add it to the dictionary and CSV file
-                    userCredentials[enteredUsername] = enteredPassword;
-
-                    // Save the updated userCredentials dictionary to the CSV file
-                    SaveUserCredentialsToCSV();
-
-                    // Show a message about successful sign-up
-                    MessageBox.Show($"Account for '{enteredUsername}' is created. You are now logged in as '{enteredUsername}'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Username exists, show a message about existing account
+                    MessageBox.Show($"Username '{enteredUsername}' is already registered. Enter the correct password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Clear the password textbox
+                    passwordTxt.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Please accept the Terms and Conditions","Terms and Conditions",MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                }
+                    if (AcceptBx.Checked)
+                    {
+                        // Username doesn't exist, add it to the dictionary and CSV file
+                        userCredentials[enteredUsername] = enteredPassword;
 
+                        // Save the updated userCredentials dictionary to the CSV file
+                        SaveUserCredentialsToCSV();
+
+                        // Show a message about successful sign-up
+                        MessageBox.Show($"Account for '{enteredUsername}' is created. You are now logged in as '{enteredUsername}'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please accept the Terms and Conditions", "Terms and Conditions", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    }
+
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Error Occured :"+ex.Message.ToString(), "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+            
         }
 
         private void SaveUserCredentialsToCSV()
         {
-            string csvFilePath = @"E:\Group 11 - COSC 31112\Resources\Login_Details.csv";
-
-            // Create or overwrite the CSV file with the updated userCredentials
-            using (StreamWriter sw = new StreamWriter(csvFilePath, false))
+            string csvFilePath = @"Resources\Login_Details.csv";
+            try
             {
-                foreach (var entry in userCredentials)
+                // Create or overwrite the CSV file with the updated userCredentials
+                using (StreamWriter sw = new StreamWriter(csvFilePath, false))
                 {
-                    sw.WriteLine($"{entry.Key},{entry.Value}");
+                    foreach (var entry in userCredentials)
+                    {
+                        sw.WriteLine($"{entry.Key},{entry.Value}");
+                    }
                 }
+            }catch(Exception ex) 
+            {
+                MessageBox.Show("Error Occured :" + ex.Message.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
     }

@@ -16,7 +16,13 @@ namespace Group_11___COSC_31112
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddNewSubT());
+            Application.Run(new Log());
+            //Application.Run(new Form6());
+            //Application.Run(new addNewAcc());
+            //Application.Run(new frmAddNewSubT());
+            // Application.Run(new Home());
+            //Application.Run(new Form7());
+
         }
     }
 }

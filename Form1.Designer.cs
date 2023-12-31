@@ -51,20 +51,22 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(489, 0);
+            this.panel1.Location = new System.Drawing.Point(652, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 450);
+            this.panel1.Size = new System.Drawing.Size(415, 554);
             this.panel1.TabIndex = 1;
             // 
             // Signbtn
             // 
             this.Signbtn.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Signbtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Signbtn.Location = new System.Drawing.Point(158, 238);
+            this.Signbtn.Location = new System.Drawing.Point(211, 293);
+            this.Signbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Signbtn.Name = "Signbtn";
-            this.Signbtn.Size = new System.Drawing.Size(82, 34);
+            this.Signbtn.Size = new System.Drawing.Size(109, 42);
             this.Signbtn.TabIndex = 3;
-            this.Signbtn.Text = "Sign In ";
+            this.Signbtn.Text = "Sign Up";
             this.Signbtn.UseVisualStyleBackColor = false;
             this.Signbtn.Click += new System.EventHandler(this.Signbtn_Click);
             // 
@@ -72,9 +74,10 @@
             // 
             this.Logbtn.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Logbtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Logbtn.Location = new System.Drawing.Point(51, 238);
+            this.Logbtn.Location = new System.Drawing.Point(68, 293);
+            this.Logbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Logbtn.Name = "Logbtn";
-            this.Logbtn.Size = new System.Drawing.Size(82, 34);
+            this.Logbtn.Size = new System.Drawing.Size(109, 42);
             this.Logbtn.TabIndex = 3;
             this.Logbtn.Text = "Log In";
             this.Logbtn.UseVisualStyleBackColor = false;
@@ -82,31 +85,34 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(51, 162);
+            this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTxt.Location = new System.Drawing.Point(68, 199);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordTxt.Multiline = true;
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.PasswordChar = '*';
-            this.passwordTxt.Size = new System.Drawing.Size(189, 27);
+            this.passwordTxt.Size = new System.Drawing.Size(251, 32);
             this.passwordTxt.TabIndex = 2;
             this.passwordTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // usernameTxt
             // 
-            this.usernameTxt.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(51, 92);
+            this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTxt.Location = new System.Drawing.Point(68, 113);
+            this.usernameTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usernameTxt.Multiline = true;
             this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(189, 27);
+            this.usernameTxt.Size = new System.Drawing.Size(251, 32);
             this.usernameTxt.TabIndex = 2;
             this.usernameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // AcceptBx
             // 
             this.AcceptBx.AutoSize = true;
-            this.AcceptBx.Location = new System.Drawing.Point(32, 303);
+            this.AcceptBx.Location = new System.Drawing.Point(43, 373);
+            this.AcceptBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AcceptBx.Name = "AcceptBx";
-            this.AcceptBx.Size = new System.Drawing.Size(267, 17);
+            this.AcceptBx.Size = new System.Drawing.Size(329, 20);
             this.AcceptBx.TabIndex = 1;
             this.AcceptBx.Text = "I have read and accepted the terms and conditions";
             this.AcceptBx.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 137);
+            this.label2.Location = new System.Drawing.Point(63, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 22);
+            this.label2.Size = new System.Drawing.Size(131, 27);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password";
             // 
@@ -125,9 +132,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 66);
+            this.label1.Location = new System.Drawing.Point(63, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 22);
+            this.label1.Size = new System.Drawing.Size(137, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             // 
@@ -137,17 +145,19 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(489, 450);
+            this.panel2.Size = new System.Drawing.Size(652, 554);
             this.panel2.TabIndex = 2;
             // 
             // Log
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Log";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome to Money Manager";
